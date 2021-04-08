@@ -39,6 +39,7 @@ app.post("/details",async(req,res)=>{
         console.log(cpassword);
         const age=req.body.age;
         console.log(age);
+        console.log(req.body.Checkbox);
         if(password==cpassword){
             const newCollection=new Details({
                email:email,
