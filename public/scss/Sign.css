@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  place-items: center;
+  width: 90vw;
+  height: 90vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form .sigin {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px  black;
+  word-spacing: 2rem;
+  letter-spacing: 1rem;
+}
+
+form input {
+  width: 20vw;
+  height: 5vh;
+  padding: .5rem;
+  border-radius: 5rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input::-webkit-input-placeholder {
+  font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form input:-ms-input-placeholder {
+  font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form input::-ms-input-placeholder {
+  font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form input::placeholder {
+  font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  place-items: center;
+  width: 20vw;
+  height: 5vh;
+  font-size: 1.5rem;
+}
+
+form .Checkbox {
+  width: 2vw;
+  height: 2vh;
+}
+
+form .Checkbox:checked::before {
+  background-color: green;
+}
+
+form .Button {
+  background-color: black;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .5rem;
+  color: white;
+}
+/*# sourceMappingURL=Sign.css.map */
