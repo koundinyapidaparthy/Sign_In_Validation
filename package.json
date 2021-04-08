@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node src/app.js"
+    "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,8 +14,7 @@
     "express": "^3.21.2",
     "hbs": "^4.1.1",
     "heroku": "^7.52.0",
-    "mongoose": "^5.11.15",
-    "nodemon": "^2.0.7"
+    "mongoose": "^5.11.15"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
