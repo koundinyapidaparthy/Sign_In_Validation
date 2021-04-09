@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../scss/Sign.css">
 </head>
 <body>
-    <form action="/details" method="post">
+    <form  action="/Login1" method="POST">
         <div class="sigin">Signin here</div>
         <input type="email" name="email" id="email" class="email" placeholder="Enter your email">
         <input type="number" name="number" id="number" class="number" placeholder="Enter your Phone number">
@@ -17,4 +17,51 @@
         <input type="submit" class="Button" value="Signin"/>
     </form>
 </body>
+<script type="text/javascript">
+    const email=document.querySelector(".email");
+    const number=document.querySelector(".number");
+    const password=document.querySelector(".password");
+    const cpassword=document.querySelector(".cpassword");
+    const age=document.querySelector(".age");
+    const Checkbox=document.querySelector(".Checkbox");
+    document.querySelector(".Button").addEventListener("click", (e)=>{
+    console.log(Checkbox.value);
+            if(email.value.trim()=="" || number.value.trim()=="" || password.value.trim()=="" || cpassword.value.trim()=="" || age.value.trim()==""){
+                e.preventDefault();
+                alert("Some fields are empty");
+                            if(email.value.trim()==""){
+                                email.style.borderColor="red";
+                            }
+                            if(number.value.trim()==""){
+                                number.style.borderColor="red"
+                            }
+                            if(password.value.trim()==""){
+                                password.style.borderColor="red";
+                            }
+                            if(cpassword.value.trim()==""){
+                                cpassword.style.borderColor="red";
+                            }
+                            if(age.value.trim()==""){
+                                age.style.borderColor="red"
+                            }
+                            if(number.value.trim()<=9){
+                                e.preventDefault();
+                                alert("phno must be more than 9 numbers");
+                            }
+                            if(password.value.trim()!=cpassword.value.trim()){
+                            e.preventDefault();
+                            alert("wrong re-conform password");
+                            password.style.borderColor="red";
+                            cpassword.style.borderColor="red";
+                        }
+            }
+            if(Checkbox.checked!=true){
+                e.preventDefault();
+                alert("Checkbox is not checked");
+                Checkbox.style.borderColor="red";
+            }
+            
+            
+    })
+</script>
 </html>

@@ -25,21 +25,18 @@ const Details=require("./models/Schema");
 app.get("/",async(req,res)=>{
     res.render("Sigin");
 })
-app.post("/details",async(req,res)=>{
+app.get("/Login1",async(req,res)=>{
+    res.render("Login1");
+})
+app.post("/Login1",async(req,res)=>{
 
     try{
-        console.log(req.body);
         const email=req.body.email;
-        console.log(email);
         const password=req.body.password;
-        console.log(password);
         const numb=req.body.number;
-        console.log(numb);
         const cpassword=req.body.cpassword;
-        console.log(cpassword);
         const age=req.body.age;
-        console.log(age);
-        console.log(req.body.Checkbox);
+        const Checkbox=req.body.Checkbox;
         if(password==cpassword){
             const newCollection=new Details({
                email:email,
@@ -49,11 +46,11 @@ app.post("/details",async(req,res)=>{
                age:age,
             });
             const result =await newCollection.save();
-            res.send(result);
+            res.render("Login1");
             console.log(result);
         }
         else{
-            res.send("email and verify email are not matching");
+            res.send("some error occured");
         }
     }
     catch(e){
