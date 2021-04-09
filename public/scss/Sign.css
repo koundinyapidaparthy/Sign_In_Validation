@@ -45,8 +45,8 @@ form .sigin {
 }
 
 form input {
-  width: 250px;
-  height: 50px;
+  width: 20vw;
+  height: 5vh;
   padding: .5rem;
   border-radius: 5rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -89,13 +89,9 @@ form span {
   font-size: 1.5rem;
 }
 
-form .Checkbox {
+form span .Checkbox {
   width: 2vw;
   height: 2vh;
-}
-
-form .Checkbox:checked::before {
-  background-color: green;
 }
 
 form .Button {
@@ -105,5 +101,117 @@ form .Button {
   font-weight: bold;
   letter-spacing: .5rem;
   color: white;
+}
+
+.Change {
+  border-color: red;
+}
+
+@media screen and (max-width: 1440px) {
+  form input {
+    width: 30vw;
+    height: 5vh;
+  }
+  form span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    place-items: center;
+    width: 30vw;
+    height: 5vh;
+  }
+  form span .Checkbox {
+    width: 3vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  form input {
+    width: 40vw;
+    height: 5vh;
+  }
+  form span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    place-items: center;
+    width: 40vw;
+    height: 5vh;
+  }
+  form span .Checkbox {
+    width: 4vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  form input {
+    width: 50vw;
+    height: 5vh;
+  }
+  form span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    place-items: center;
+    width: 50vw;
+    height: 5vh;
+  }
+  form span .Checkbox {
+    width: 5vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  form input {
+    width: 70vw;
+    height: 5vh;
+  }
+  form span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    place-items: center;
+    width: 70vw;
+    height: 5vh;
+  }
+  form span .Checkbox {
+    width: 7vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  form input {
+    width: 80vw;
+    height: 5vh;
+  }
+  form span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    place-items: center;
+    width: 80vw;
+    height: 5vh;
+  }
+  form span .Checkbox {
+    width: 8vw;
+  }
+  form .sigin {
+    font-size: 1.5rem;
+  }
 }
 /*# sourceMappingURL=Sign.css.map */

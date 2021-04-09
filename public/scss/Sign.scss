@@ -45,15 +45,11 @@ form{
     span{
         @include display(20vw,5vh ,none );
         font-size: 1.5rem;
+        .Checkbox{
+            width:2vw;
+            height: 2vh;
+        }
     }
-    .Checkbox{
-        width:2vw;
-        height: 2vh;
-       &:checked::before{
-        background-color:green;
-       }
-    }
-
     .Button{
         background-color: black;
         font-size: 1.5rem;
@@ -65,4 +61,40 @@ form{
 }
 .Change{
     border-color:red;
+}
+
+@mixin media($val1,$val2){
+    form{
+        input{
+        width:$val1;
+        height:$val2;
+        }
+        span{
+            @include display($val1,$val2,none);
+            .Checkbox{
+                width:$val1/10;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1440px){
+    @include media(30vw,5vh);
+}
+@media screen and (max-width:1024px){
+    @include media(40vw,5vh);
+}
+@media screen and (max-width:768px){
+    @include media(50vw,5vh);
+}
+@media screen and (max-width:425px){
+    @include media(70vw,5vh);
+}
+@media screen and (max-width:320px){
+    @include media(80vw,5vh);
+    form {
+    .sigin{
+            font-size: 1.5rem;
+        }
+    }
 }
