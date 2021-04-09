@@ -11,9 +11,9 @@
         <input type="email" name="email" id="email" class="email" placeholder="Enter your email">
         <input type="number" name="number" id="number" class="number" placeholder="Enter your Phone number">
         <input type="password" name="password" id="password" class="password" placeholder="Enter your password">
-        <input type="password" name="cpassword" id="cpassword" class="cpassword" placeholder="conform your Password">
+        <input type="password" name="cpassword" id="cpassword" class="cpassword" placeholder="confirm your Password">
         <input type="number" name="age" id="age" class="age" placeholder="Enter your Age">
-        <span><input type="checkbox" name="Checkbox" class="Checkbox"/>Conforming the rules and regualtions</span>
+        <span><input type="checkbox" name="Checkbox" class="Checkbox"/><a href="">Conforming the rules and regualtions</a></span>
         <input type="submit" class="Button" value="Signin"/>
     </form>
 </body>
@@ -48,13 +48,13 @@
                                 e.preventDefault();
                                 alert("phno must be more than 9 numbers");
                             }
-                            if(password.value.trim()!=cpassword.value.trim()){
+            }
+            if(password.value.trim()!=cpassword.value.trim()){
                             e.preventDefault();
                             alert("wrong re-conform password");
                             password.style.borderColor="red";
                             cpassword.style.borderColor="red";
-                        }
-            }
+                }
             if(Checkbox.checked!=true){
                 e.preventDefault();
                 alert("Checkbox is not checked");

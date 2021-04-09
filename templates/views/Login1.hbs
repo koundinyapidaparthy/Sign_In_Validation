@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
     {{>meta}}
-    <title>Login through sigin</title>
+    <title>User information</title>
+    <style>
+        body{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            width:100vw;
+            height:100vh;
+        }
+            #videoElement {
+               box-shadow: 0 0 20px black;
+               width: 400px;
+               height: 300px;
+              } 
+         </style>
 </head>
 <body>
-            
+            here we are accessing your location and video dont worry this is for checking purpose;
+
+            <div id="location"></div>
+            <br />
+            <br />
+            <br />
+            <video autoplay="true" id="videoElement"></video>
+
+            hey 
+            hey 
+            hey 
+            dont worry this is for checking purpose
 </body>
+<script>
+    alert("thank you sigin");
+    if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition((postion)=>{
+        document.querySelector("#location").innerHTML =`Your latitude: ${postion.coords.latitude} and longitude: ${postion.coords.longitude}`;
+    });
+    }
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUsermedia || navigator.mozGetUserMedia || navigato.msGetUserMedia || navigator.oGetUserMedia;
+    const video = document.querySelector("#videoElement");
+    if(navigator.getUserMedia){
+         navigator.getUserMedia({video:true}, handleVideo, videoError);
+    }
+    function handleVideo(stream){
+            video.srcObject = stream;
+            video.play();
+    }
+    function videoError(e){}
+</script>
 </html>
