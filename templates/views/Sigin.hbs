@@ -9,10 +9,14 @@
     <form  action="/Login" method="POST">
         <div class="sigin">Signin here</div>
         <input type="email" name="email" id="email" class="email" placeholder="Enter your email">
+        <span class="span1" id="s1"></span>
         <input type="number" name="number" id="number" class="number" placeholder="Enter your Phone number">
+        <span class="span1" id="s2"></span>
         <input type="password" name="password" id="password" class="password" placeholder="Enter your password">
         <input type="password" name="cpassword" id="cpassword" class="cpassword" placeholder="confirm your Password">
+        <span class="span1" id="s3"></span>
         <input type="number" name="age" id="age" class="age" placeholder="Enter your Age">
+        <span class="span1" id="s4"></span>
         <span><input type="checkbox" name="Checkbox" class="Checkbox"/><a href="">Conforming the rules and regualtions</a></span>
         <input type="submit" class="Button" value="Signin"/>
     </form>
@@ -24,6 +28,12 @@
     const cpassword=document.querySelector(".cpassword");
     const age=document.querySelector(".age");
     const Checkbox=document.querySelector(".Checkbox");
+
+    const s1=document.querySelector("#s1");
+    const s2=document.querySelector("#s2");
+    const s3=document.querySelector("#s3");
+    const s4=document.querySelector("#s4");
+
     document.querySelector(".Button").addEventListener("click", (e)=>{
             
             if(email.value.trim()=="" || number.value.trim()=="" || password.value.trim()=="" || cpassword.value.trim()=="" || age.value.trim()==""){
@@ -44,17 +54,51 @@
                             if(age.value.trim()==""){
                                 age.style.borderColor="red"
                             }
-                            if(number.value.trim()<=9){
-                                e.preventDefault();
-                                alert("phno must be more than 9 numbers");
-                            }
+                            
             }
+            else{
+
+            }
+            if(number.value.trim().length<=9 || number.value.trim().length>=11){
+                                e.preventDefault();
+                                s2.style.display="block";
+                                number.style.borderColor="red"
+                               if(number.value.trim().length<=9){
+                                   s2.innerHTML=" * number Length must be greater than 9";
+                               }
+                               else{
+                                   s2.innerHTML="* number Length must be less than 10";
+                               }
+                                number.style.borderColor="red"
+                }
+            else{
+                s2.style.display="none";
+                number.style.borderColor="#0000004d"
+            }
+
             if(password.value.trim()!=cpassword.value.trim()){
                             e.preventDefault();
-                            alert("wrong re-conform password");
+                            s3.style.display="block";
+                            s3.innerHTML=" * Passwords are not matching";
                             password.style.borderColor="red";
                             cpassword.style.borderColor="red";
                 }
+                else{
+                    s3.style.display="none";
+                     password.style.borderColor="#0000004d";
+                     cpassword.style.borderColor="#0000004d";
+                }
+
+            if(age.value.trim()<=10){
+                e.preventDefault();
+                s4.style.display="block";
+                s4.innerHTML="* age must be greater than 10";
+                age.style.borderColor="red";
+            }
+            else{
+                s4.style.display="none";
+                age.style.borderColor="#0000004d";
+            }
             if(Checkbox.checked!=true){
                 e.preventDefault();
                 alert("Checkbox is not checked");

@@ -20,7 +20,7 @@ form{
         height:5vh;
         padding: .5rem;
         border-radius:5rem;
-        border:1px solid rgba(0, 0, 0, 0.3);
+        border:1px solid #0000004d;
         &:focus{
             outline: none;
         }
@@ -49,7 +49,10 @@ form{
 .Change{
     border-color:red;
 }
-
+.span1{
+    display:none;
+    color:red;
+}
 @mixin media($val1,$val2){
     form{
         input{
