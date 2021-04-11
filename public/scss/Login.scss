@@ -1,0 +1,67 @@
+@import "_multiple";
+body{
+    @include display(100vw,100vh,center);
+}
+form{
+    @include display(20vw,30vh,center);
+    flex-direction: column;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 30px -5px rgb(0, 0, 0);
+    justify-content:space-around;
+    &:first-child{
+        font-size: 2rem;
+        font-weight:bold;
+        letter-spacing:.3rem;
+        text-shadow: 0 0 20px black;
+    }
+    input{
+        @include display(15vw,5vh,none);
+        border-radius:2rem;
+        border: 1px solid rgba(0, 0, 0, 0.424);
+        &:focus{
+            outline:none;
+        }
+    }
+    .email, .password{
+        padding-left: 10px;
+    }
+    .login {
+        justify-content:center;
+        background-color:black;
+        color:white;
+        font-size:1.5rem;
+        font-weight:bold;
+        letter-spacing: .2rem;
+        &:hover{
+            cursor:pointer;
+        }
+    }
+}
+
+@mixin media($val1,$val2){
+    form{
+        width:$val1;
+        input{
+            width:$val2;
+        }
+    }
+    
+}
+@media screen and (max-width:1440px){
+    @include media(30vw,25vw);
+}
+@media screen and (max-width:1024px){
+    @include media(35vw,30vw);
+}
+@media screen and (max-width: 768px){
+    @include media(45vw,40vw);
+}
+@media screen and (max-width: 425px){
+    @include media(60vw,45vw);
+}
+@media screen and (max-width: 375px){
+    @include media(70vw,50vw);
+}
+@media screen and (max-width: 320px){
+    @include media(70vw,45vw);
+}

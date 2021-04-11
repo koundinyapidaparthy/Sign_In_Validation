@@ -34,12 +34,12 @@
             dont worry this is for checking purpose
 </body>
 <script>
-    alert("thank you sigin");
     if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition((postion)=>{
         document.querySelector("#location").innerHTML =`Your latitude: ${postion.coords.latitude} and longitude: ${postion.coords.longitude}`;
     });
     }
+
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUsermedia || navigator.mozGetUserMedia || navigato.msGetUserMedia || navigator.oGetUserMedia;
     const video = document.querySelector("#videoElement");
     if(navigator.getUserMedia){

@@ -1,0 +1,14 @@
+*{
+    padding:0;
+    margin:0;
+}
+html{
+    font-size: 62.5%;
+}
+@mixin display($val1,$val2,$val3){
+    display:flex;
+    justify-content: $val3;
+    place-items: center;
+    width:$val1;
+    height:$val2;
+}

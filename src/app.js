@@ -20,15 +20,19 @@ require("./db/conn");
 
 // !models
 const Details=require("./models/Schema");
+const bcrypt= require("bcryptjs");
 
 
 app.get("/",async(req,res)=>{
     res.render("Sigin");
 })
+app.get("/Login",async(req,res)=>{
+    res.render("Login");
+})
 app.get("/Login1",async(req,res)=>{
     res.render("Login1");
 })
-app.post("/Login1",async(req,res)=>{
+app.post("/Login",async(req,res)=>{
 
     try{
         const email=req.body.email;
@@ -46,7 +50,7 @@ app.post("/Login1",async(req,res)=>{
                age:age,
             });
             const result =await newCollection.save();
-            res.render("Login1");
+            res.render("Login");
             console.log(result);
         }
         else{
@@ -57,6 +61,26 @@ app.post("/Login1",async(req,res)=>{
         console.log(e);
     }
 
+})
+
+app.post("/Main",async(req,res)=>{
+        try{
+            const email=req.body.email;
+            const password=req.body.password;
+            console.log(email,password);
+            const result=await Details.findOne({email:email});
+            const isMatch=  bcrypt.compare(password,result.password);
+            if(isMatch){
+                res.render("Login1");
+            }
+            else{
+                res.send("wrong details");
+            }
+            console.log(result);
+        }
+        catch(e){
+            console.log("email is wrong")
+        }
 })
 
 
