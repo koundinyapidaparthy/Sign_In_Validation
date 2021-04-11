@@ -63,7 +63,7 @@ app.post("/Login",async(req,res)=>{
 
 })
 
-app.post("/Main",async(req,res)=>{
+app.post("/Login1",async(req,res)=>{
         try{
             const email=req.body.email;
             const password=req.body.password;
